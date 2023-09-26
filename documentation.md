@@ -143,15 +143,64 @@ In conclusion, the choice of method should depend on our specific use case. If y
 
 # Dot Product
 The dot product of the two matrices matrix1 and matrix2 is computed using Nested Loops, Numpy Built-In Functions, and Numpy Einstein Notation Function (einsum). Similar to what we observed in the prior example, using NumPy's np.einsum is once again the best choice in this scenario where execution time is critical. NumPy's np.einsum is appropriate for managing huge matrices and maximizing the project's execution time, since it is both concise and effective. Here's how we used these approaches to compute  dot product of two matrices:
-![Green White Aesthetic Floral Blank Document Border](https://github.com/tirthbha/23-Homework2G1/assets/143649367/c8a03375-1870-42ef-91f7-5bb1b91232c5)
+
+###### The entire code used to compute dot product of two matrices is given as below:
+
+```python
+import numpy as np
+import time
+
+# Define two matrices (they can have different dimensions)
+matrix1 = np.array([[200, 533, 233], [532, 332, 534], [6342, 4434, 3434]])
+matrix2 = np.array([[4454, 5545, 5456], [2423, 434, 345], [6434, 84, 344]])
+
+# Method 1: Using NumPy's np.sum
+start_time = time.time()
+dot_product_np_sum = np.sum(matrix1 * matrix2)
+end_time = time.time()
+print(f"Dot Product using np.sum: {dot_product_np_sum}")
+print(f"Execution time using np.sum: {end_time - start_time} seconds")
+
+# Method 2: Using a nested loop
+def dot_product_loop(matrix1, matrix2):
+    """
+    Calculate the dot product of two matrices using a nested loop.
+
+    Args:
+        matrix1 (numpy.ndarray): The first matrix.
+        matrix2 (numpy.ndarray): The second matrix.
+
+    Returns:
+        float: The dot product of the two matrices.
+    """
+    result = 0
+    for i in range(matrix1.shape[0]):
+        for j in range(matrix1.shape[1]):
+            result += matrix1[i, j] * matrix2[i, j]
+    return result
+
+start_time = time.time()
+dot_product_loop_result = dot_product_loop(matrix1, matrix2)
+end_time = time.time()
+print(f"Dot Product using a loop: {dot_product_loop_result}")
+print(f"Execution time using a loop: {end_time - start_time} seconds")
+
+# Method 3: Using NumPy's np.einsum
+start_time = time.time()
+dot_product_einsum = np.einsum('ij,ij->', matrix1, matrix2)
+end_time = time.time()
+print(f"Dot Product using np.einsum: {dot_product_einsum}")
+print(f"Execution time using np.einsum: {end_time - start_time} seconds")
+```
+###### Output
 ![Screenshot from 2023-09-26 00-26-18](https://github.com/tirthbha/23-Homework2G1/assets/143649367/0da350e9-9a52-4733-b9d8-e646ceaf1344)
 
 In summary, while np.einsum may have a learning curve due to its index notation, it provides a powerful and efficient way to work with complex tensor operations, making it a valuable tool in scientific computing and data manipulation tasks. Its advantages include conciseness, readability, performance, versatility, customization, broadcasting support, and the ability to handle complex operations with ease.
 
-
-
-
-  
- 
+# References
+- IBM Quantum lab
+- Google colab
+- CHATgpt
+- https://github.com/ubsuny/CompPhys/blob/main/ReviewPython/EinsteinNotation.ipynb 
 
 
