@@ -9,6 +9,9 @@ matrix2 = np.array([[4454, 5545, 5456], [2423, 434, 345], [6434, 84, 344]])
 start_time = time.time()
 dot_product_np_sum = np.sum(matrix1 * matrix2)
 end_time = time.time()
+
+assert dot_product_np_sum == 49093067, "first method doesn't return corret dot product"
+
 print(f"Dot Product using np.sum: {dot_product_np_sum}")
 print(f"Execution time using np.sum: {end_time - start_time} seconds")
 
