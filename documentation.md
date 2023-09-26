@@ -1,20 +1,24 @@
-# Einstein Notation Matrix Operations Benchmarking
+# Matrix Multiplication and Dot Product Comparison
 
 
-This project compares the execution time of different implementations of matrix operations using Einstein notation. We'll cover various matrix operations and measure their performance in Python.
 
-## Table of Contents
+We compared the execution time of different implementations of matrix operations and used Matrix Multiplication and Dot Product operations. We compared the execution time of different implementations for matrix multiplication and dot product operations in Python. We explored three methods:
 
-1. [Trace of an Array](./trace/README.md)
-2. [Return a Diagonal](./diagonal/README.md)
-3. [Array Axis Summations](./axis_summations/README.md)
-4. [Transpositions and Permutations](./transpositions_permutations/README.md)
-5. [Matrix Multiplication and Dot Product](./matrix_multiplication_dot_product/README.md)
-6. [Vector Inner and Outer Products](./vector_products/README.md)
-7. [Broadcasting, Element-wise and Scalar Multiplication](./broadcasting_multiplication/README.md)
-8. [Tensor Contractions](./tensor_contractions/README.md)
-9. [Chained Array Operations](./chained_operations/README.md)
+1. **Using For Loops**
+2. **Using NumPy Built-in Functions**
+3. **Using NumPy Einstein Notation Function**
 
-   # 1. Trace of an Array
-   The trace of a square matrix is the sum of its diagonal elements. In Einstein notation, it is a sum over the repeated indices.
-   ![Screenshot from 2023-09-25 19-02-26](https://github.com/tirthbha/23-Homework2G1/assets/143649367/5e003098-5406-4ca7-9e1c-7a7deddf92bf)
+## Prerequisites
+- Python (3) (IBM Quantum Lab)
+- NumPy library
+
+  ### 1. Using For Loops
+For loop-based matrix multiplication is a straightforward method, but it may not be as efficient as numpy's built-in functions. Here's how you can implement it:
+
+![Screenshot from 2023-09-25 20-01-34](https://github.com/tirthbha/23-Homework2G1/assets/143649367/56b71983-ee16-42df-bb39-437988e833ca)
+#### Output: 
+![Screenshot from 2023-09-25 20-01-57](https://github.com/tirthbha/23-Homework2G1/assets/143649367/4a58e31a-3d4d-4a25-adf6-04aed370249a)
+
+
+
+
