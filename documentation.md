@@ -28,7 +28,7 @@ NumPy provides efficient matrix multiplication and dot product functions. Here's
 ![Screenshot from 2023-09-25 20-22-29](https://github.com/tirthbha/23-Homework2G1/assets/143649367/a735cc84-42af-4594-b1c5-a157aba3ab8a)
 
 ### 3. Using Numpy Einstein Notation Function (einsum)
-
+Nested Loops, Numpy Built-In Functions, and Numpy Einstein Notation Function (einsum)
 Numpy's Einstein notation function allows you to specify contraction indices for complex operations. Here's how we used use it:
 
 ![Screenshot from 2023-09-25 20-25-32](https://github.com/tirthbha/23-Homework2G1/assets/143649367/9a6b5b37-80de-4492-887c-10318b99132e)
@@ -44,3 +44,18 @@ Numpy's Einstein notation function allows you to specify contraction indices for
 - Nested loops are the slowest, taking 32.781758069992065 seconds. This is because they lack the optimizations that numpy            provides, and they involve nested loops, leading to longer execution times, especially for larger matrices.
 
 In conclusion, the choice of method should depend on our specific use case. If you need the fastest execution and have a good understanding of Einstein notation, numpy einsum is a great option. Numpy built-in functions offer a good balance between performance and simplicity. For loops (nested) are the most straightforward but should be reserved for small matrices or when simplicity is more important than performance.
+
+# Dot Product
+The dot product of the two matrices matrix1 and matrix2 is computed using Nested Loops, Numpy Built-In Functions, and Numpy Einstein Notation Function (einsum). Similar to what we observed in the prior example, using NumPy's np.einsum is once again the best choice in this scenario where execution time is critical. NumPy's np.einsum is appropriate for managing huge matrices and maximizing the project's execution time, since it is both concise and effective. Here's how we used these approaches to compute  dot product of two matrices:
+![Green White Aesthetic Floral Blank Document Border](https://github.com/tirthbha/23-Homework2G1/assets/143649367/c8a03375-1870-42ef-91f7-5bb1b91232c5)
+![Screenshot from 2023-09-26 00-26-18](https://github.com/tirthbha/23-Homework2G1/assets/143649367/0da350e9-9a52-4733-b9d8-e646ceaf1344)
+
+In summary, while np.einsum may have a learning curve due to its index notation, it provides a powerful and efficient way to work with complex tensor operations, making it a valuable tool in scientific computing and data manipulation tasks. Its advantages include conciseness, readability, performance, versatility, customization, broadcasting support, and the ability to handle complex operations with ease.
+
+
+
+
+  
+ 
+
+
