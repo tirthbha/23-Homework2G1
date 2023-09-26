@@ -10,7 +10,7 @@ start_time = time.time()
 dot_product_np_sum = np.sum(matrix1 * matrix2)
 end_time = time.time()
 
-assert dot_product_np_sum == 49093067, "first method doesn't return corret dot product"
+assert dot_product_np_sum == 49093067, "first method doesn't return correct dot product"
 
 print(f"Dot Product using np.sum: {dot_product_np_sum}")
 print(f"Execution time using np.sum: {end_time - start_time} seconds")
@@ -32,6 +32,8 @@ def dot_product_loop(matrix1, matrix2):
         for j in range(matrix1.shape[1]):
             result += matrix1[i, j] * matrix2[i, j]
     return result
+    
+    assert result == 49093067, "second method doesn't return correct dot product"
 
 start_time = time.time()
 dot_product_loop_result = dot_product_loop(matrix1, matrix2)
@@ -42,6 +44,9 @@ print(f"Execution time using a loop: {end_time - start_time} seconds")
 # Method 3: Using NumPy's np.einsum
 start_time = time.time()
 dot_product_einsum = np.einsum('ij,ij->', matrix1, matrix2)
+
+assert dot_product_einsum == 49093067, "third method doesn't return correct dot product"
+
 end_time = time.time()
 print(f"Dot Product using np.einsum: {dot_product_einsum}")
 print(f"Execution time using np.einsum: {end_time - start_time} seconds")
