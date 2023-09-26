@@ -1,4 +1,4 @@
-# Matrix Multiplication and Dot Product Comparison
+# Matrix Multiplication and Dot Product
 
 
 
