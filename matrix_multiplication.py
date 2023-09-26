@@ -28,6 +28,11 @@ def matrix_multiply_manual(A, B):
         for j in range(B.shape[1]):
             for k in range(A.shape[1]):
                 C[i, j] += A[i, k] * B[k, j]
+
+    expected_product = np.array([[3681381,1359894,1355237],[6609720,3138884,3200828],[61085206,37379202,37312978]])
+    are_equal1 = np.array_equal(C, expected_product)
+    assert are_equal1 == True, "method 1 fails"
+    
     return C
 
 # Method 2: NumPy's built-in matrix multiplication
