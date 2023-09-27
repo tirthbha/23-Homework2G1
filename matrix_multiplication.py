@@ -27,7 +27,7 @@ def matrix_multiply_manual(A, B):
     for i in range(A.shape[0]):
         for j in range(B.shape[1]):
             for k in range(A.shape[1]):
-                C[i, j] += A[i, k] * B[k, j]
+                C[i, j] += A[i, k] * B[k, j]    
     return C
 
 # Method 2: NumPy's built-in matrix multiplication
@@ -76,6 +76,23 @@ C3 = matrix_multiply_einsum(A, B)
 end_time = time.time()
 time_list[2] = end_time - start_time
 print(f"Method 3 (Einstein Notation) Execution Time: {end_time - start_time} seconds")
+
+#Unit tests:
+#setting expected value of multiplication (calculated with calculator)
+expected_product = np.array([[3681381,1359894,1355237],[6609720,3138884,3200828],[61085206,37379202,37312978]])
+
+#testing method 1
+are_equal1 = np.array_equal(matrix_multiply_manual(A, B), expected_product)
+assert are_equal1 == True, "method 1 fails"
+
+#testing method 2
+are_equal2 = np.array_equal(np_matrix_multiply(A, B), expected_product)
+assert are_equal1 == True, "method 2 fails"
+
+#testing method 3
+are_equal3 = np.array_equal(matrix_multiply_einsum(A, B), expected_product)
+assert are_equal1 == True, "method 3 fails"
+
 
 # Plotting Results
 
